@@ -1,19 +1,21 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-    <ToDoMain />
+    <!-- <Login /> -->
+    <router-view></router-view>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import ToDoMain from "./components/ToDoApp/ToDoMain";
+// import ToDoMain from "./components/ToDoApp/ToDoMain";
+// import Login from "./pages/login/Login";
 
 export default {
   name: "App",
   components: {
-    ToDoMain,
+    // Login,
   },
 };
 </script>
