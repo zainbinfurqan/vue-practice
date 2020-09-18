@@ -1,8 +1,8 @@
 <template>
   <div class="signup-form">
     <form action="/examples/actions/confirmation.php" method="post">
-      <h2>Register</h2>
-      <p class="hint-text">Create your account. It's free and only takes a minute.</p>
+      <h2 class="text-white">Register</h2>
+      <p class="hint-text text-white">Create your account. It's free and only takes a minute.</p>
       <div class="form-group">
         <div class="row">
           <div class="col">
@@ -55,8 +55,8 @@
       <div class="form-group">
         <label class="form-check-label">
           <input type="checkbox" required="required" /> I accept the
-          <a href="#">Terms of Use</a> &amp;
-          <a href="#">Privacy Policy</a>
+          <a href="#" class="text-white">Terms of Use</a> &amp;
+          <a href="#" class="text-white">Privacy Policy</a>
         </label>
       </div>
       <div class="form-group">
@@ -65,7 +65,9 @@
     </form>
     <div class="text-center">
       Already have an account?
-      <a href="#">Sign in</a>
+      <p class="text-dark">
+        <router-link class="text-dark" to="/registration">Sign in</router-link>
+      </p>
     </div>
   </div>
 </template>
@@ -101,7 +103,7 @@ export default {
   position: relative;
   text-align: center;
 }
-.signup-form h2:before,
+/* .signup-form h2:before,
 .signup-form h2:after {
   content: "";
   height: 2px;
@@ -116,7 +118,7 @@ export default {
 }
 .signup-form h2:after {
   right: 0;
-}
+} */
 .signup-form .hint-text {
   color: #999;
   margin-bottom: 30px;
@@ -126,7 +128,7 @@ export default {
   color: #999;
   border-radius: 3px;
   margin-bottom: 15px;
-  background: #f2f3f7;
+  background: #064b90;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   padding: 30px;
 }

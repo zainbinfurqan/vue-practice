@@ -5,12 +5,17 @@ import VueRouter from 'vue-router'
 import Login from './pages/login/Login.vue'
 import Registration from './pages/Registration/Registration.vue'
 import NewFeed from './pages/NewFeed'
+import AddPost from './pages/AddPost'
+import { store } from './store'
+
 Vue.use(VueRouter)
 
 const routes = [
+  { path: '/', component: Login },
   { path: '/login', component: Login },
   { path: '/registration', component: Registration },
-  { path: '/newfeed', component: NewFeed }
+  { path: '/newfeed', component: NewFeed },
+  { path: '/newpost', component: AddPost }
 ]
 
 const router = new VueRouter({
@@ -20,6 +25,9 @@ const router = new VueRouter({
 Vue.config.productionTip = false
 
 new Vue({
+
   render: h => h(App),
   router,
+  store,
+
 }).$mount('#app')
