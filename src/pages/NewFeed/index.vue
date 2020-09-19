@@ -40,9 +40,7 @@ export default {
   },
   methods: {
     async fetchPosts() {
-      // console.log(this.$store.state.auth);
-      // console.log(this.$store.state.isLogin);
-      const response = await apis.fetchPosts();
+      const response = await apis.searchPost();
       this.posts = response;
       this.isLoading = false;
     },

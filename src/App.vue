@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import helpers from "./utils/helpers";
 export default {
   name: "App",
   components: {
@@ -12,6 +13,9 @@ export default {
   },
 
   beforeCreate() {
+    helpers.isLogin === true
+      ? this.$router.replace("newfeed")
+      : this.$router.replace("login");
     this.$store.commit("initiaStore");
   },
 };

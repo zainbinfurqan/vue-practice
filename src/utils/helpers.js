@@ -55,4 +55,12 @@ helper.removeItem = (key) => {
     return true
 }
 
+helper.isLogin = () => {
+    if (localStorage.getItem('auth')) {
+        return true
+    } else {
+        return false
+    }
+}
+
 export default helper
