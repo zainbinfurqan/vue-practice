@@ -27,6 +27,7 @@
 <script>
 import apis from "../../utils/api";
 import Loading from "../../components/Loading/Loading";
+// import helpers from "../../utils/helpers";
 
 export default {
   name: "NewFeed",
@@ -57,6 +58,10 @@ export default {
   created() {
     this.isLoading = true;
     this.fetchPosts();
+  },
+  beforeCreate() {
+    // console.log(helpers.isLogin());
+    // helpers.isLogin() == false && this.$router.replace("login");
   },
 };
 </script>

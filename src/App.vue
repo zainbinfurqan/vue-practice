@@ -1,5 +1,11 @@
 <template>
-  <div id="app">
+  <div v-if="isLoginFlag" id="app">
+    <nav class="navbar sticky-top navbar-light bg-light">
+      <a class="navbar-brand" href="#">Sticky top</a>
+    </nav>
+    <router-view></router-view>
+  </div>
+  <div v-else id="app">
     <router-view></router-view>
   </div>
 </template>
@@ -8,14 +14,14 @@
 import helpers from "./utils/helpers";
 export default {
   name: "App",
-  components: {
-    // Login,
+  data() {
+    return { isLoginFlag: false };
   },
 
   beforeCreate() {
-    helpers.isLogin === true
-      ? this.$router.replace("newfeed")
-      : this.$router.replace("login");
+    helpers.isAuthrized("", this.$router);
+    console.log("helpers.isLogin()=>", helpers.isLogin());
+    this.isLoginFlag = helpers.isLogin();
     this.$store.commit("initiaStore");
   },
 };

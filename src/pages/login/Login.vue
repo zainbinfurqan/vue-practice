@@ -58,7 +58,7 @@ export default {
     },
   },
   beforeCreate() {
-    console.log(this.$store.state.isLogin);
+    // console.log(this.$store.state.isLogin);
     this.$store.state.isLogin && this.$router.replace("newfeed");
   },
 };

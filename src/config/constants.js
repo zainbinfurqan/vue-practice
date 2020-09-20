@@ -1,5 +1,5 @@
 const constants = {
-    BASE_URL: 'localhost:3000/'
+    BASE_URL: 'https://jsonplaceholder.typicode.com'
 }
 
 export default constants

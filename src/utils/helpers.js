@@ -1,5 +1,5 @@
 import constants from '../config/constants'
-
+// import router from 'vue-router'
 const helper = {}
 
 helper.apiMethod = async function (path = null, method = null, body = null, authorization = null, url = null) {
@@ -56,10 +56,14 @@ helper.removeItem = (key) => {
 }
 
 helper.isLogin = () => {
-    if (localStorage.getItem('auth')) {
-        return true
+    return localStorage.getItem('auth') ? true : false
+}
+
+helper.isAuthrized = (route, switchMethod) => {
+    if (route) {
+        return !localStorage.getItem('auth') && switchMethod.replace('login')
     } else {
-        return false
+        return !localStorage.getItem('auth') && switchMethod.replace('login')
     }
 }
 
